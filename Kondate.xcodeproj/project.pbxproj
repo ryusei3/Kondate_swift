@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1BF0B1D01D9A8DDE0049641E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0B1CF1D9A8DDE0049641E /* AppDelegate.swift */; };
+		1BF0B1D21D9A8DDE0049641E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D11D9A8DDE0049641E /* ViewController.swift */; };
+		1BF0B1D51D9A8DDE0049641E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D31D9A8DDE0049641E /* Main.storyboard */; };
+		1BF0B1D71D9A8DDE0049641E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D61D9A8DDE0049641E /* Assets.xcassets */; };
+		1BF0B1DA1D9A8DDF0049641E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D81D9A8DDF0049641E /* LaunchScreen.storyboard */; };
+		1BF0B1E51D9A8DE00049641E /* KondateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0B1E41D9A8DE00049641E /* KondateTests.swift */; };
+		1BF0B1F01D9A8DE00049641E /* KondateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0B1EF1D9A8DE00049641E /* KondateUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BF0B1E11D9A8DE00049641E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BF0B1C41D9A8DDD0049641E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BF0B1CB1D9A8DDD0049641E;
+			remoteInfo = Kondate;
+		};
+		1BF0B1EC1D9A8DE00049641E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BF0B1C41D9A8DDD0049641E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BF0B1CB1D9A8DDD0049641E;
+			remoteInfo = Kondate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1BF0B1CC1D9A8DDD0049641E /* Kondate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kondate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BF0B1CF1D9A8DDE0049641E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1BF0B1D11D9A8DDE0049641E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1BF0B1D41D9A8DDE0049641E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1BF0B1D61D9A8DDE0049641E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BF0B1D91D9A8DDF0049641E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1BF0B1DB1D9A8DDF0049641E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BF0B1E01D9A8DE00049641E /* KondateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KondateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BF0B1E41D9A8DE00049641E /* KondateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KondateTests.swift; sourceTree = "<group>"; };
+		1BF0B1E61D9A8DE00049641E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BF0B1EB1D9A8DE00049641E /* KondateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KondateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BF0B1EF1D9A8DE00049641E /* KondateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KondateUITests.swift; sourceTree = "<group>"; };
+		1BF0B1F11D9A8DE00049641E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BF0B1C91D9A8DDD0049641E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BF0B1DD1D9A8DE00049641E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BF0B1E81D9A8DE00049641E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BF0B1C31D9A8DDD0049641E = {
+			isa = PBXGroup;
+			children = (
+				1BF0B1CE1D9A8DDE0049641E /* Kondate */,
+				1BF0B1E31D9A8DE00049641E /* KondateTests */,
+				1BF0B1EE1D9A8DE00049641E /* KondateUITests */,
+				1BF0B1CD1D9A8DDD0049641E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1BF0B1CD1D9A8DDD0049641E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BF0B1CC1D9A8DDD0049641E /* Kondate.app */,
+				1BF0B1E01D9A8DE00049641E /* KondateTests.xctest */,
+				1BF0B1EB1D9A8DE00049641E /* KondateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BF0B1CE1D9A8DDE0049641E /* Kondate */ = {
+			isa = PBXGroup;
+			children = (
+				1BF0B1CF1D9A8DDE0049641E /* AppDelegate.swift */,
+				1BF0B1D11D9A8DDE0049641E /* ViewController.swift */,
+				1BF0B1D31D9A8DDE0049641E /* Main.storyboard */,
+				1BF0B1D61D9A8DDE0049641E /* Assets.xcassets */,
+				1BF0B1D81D9A8DDF0049641E /* LaunchScreen.storyboard */,
+				1BF0B1DB1D9A8DDF0049641E /* Info.plist */,
+			);
+			path = Kondate;
+			sourceTree = "<group>";
+		};
+		1BF0B1E31D9A8DE00049641E /* KondateTests */ = {
+			isa = PBXGroup;
+			children = (
+				1BF0B1E41D9A8DE00049641E /* KondateTests.swift */,
+				1BF0B1E61D9A8DE00049641E /* Info.plist */,
+			);
+			path = KondateTests;
+			sourceTree = "<group>";
+		};
+		1BF0B1EE1D9A8DE00049641E /* KondateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1BF0B1EF1D9A8DE00049641E /* KondateUITests.swift */,
+				1BF0B1F11D9A8DE00049641E /* Info.plist */,
+			);
+			path = KondateUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1BF0B1CB1D9A8DDD0049641E /* Kondate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BF0B1F41D9A8DE00049641E /* Build configuration list for PBXNativeTarget "Kondate" */;
+			buildPhases = (
+				1BF0B1C81D9A8DDD0049641E /* Sources */,
+				1BF0B1C91D9A8DDD0049641E /* Frameworks */,
+				1BF0B1CA1D9A8DDD0049641E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kondate;
+			productName = Kondate;
+			productReference = 1BF0B1CC1D9A8DDD0049641E /* Kondate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1BF0B1DF1D9A8DE00049641E /* KondateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BF0B1F71D9A8DE00049641E /* Build configuration list for PBXNativeTarget "KondateTests" */;
+			buildPhases = (
+				1BF0B1DC1D9A8DE00049641E /* Sources */,
+				1BF0B1DD1D9A8DE00049641E /* Frameworks */,
+				1BF0B1DE1D9A8DE00049641E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BF0B1E21D9A8DE00049641E /* PBXTargetDependency */,
+			);
+			name = KondateTests;
+			productName = KondateTests;
+			productReference = 1BF0B1E01D9A8DE00049641E /* KondateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1BF0B1EA1D9A8DE00049641E /* KondateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BF0B1FA1D9A8DE00049641E /* Build configuration list for PBXNativeTarget "KondateUITests" */;
+			buildPhases = (
+				1BF0B1E71D9A8DE00049641E /* Sources */,
+				1BF0B1E81D9A8DE00049641E /* Frameworks */,
+				1BF0B1E91D9A8DE00049641E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BF0B1ED1D9A8DE00049641E /* PBXTargetDependency */,
+			);
+			name = KondateUITests;
+			productName = KondateUITests;
+			productReference = 1BF0B1EB1D9A8DE00049641E /* KondateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BF0B1C41D9A8DDD0049641E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "ryusei wakasa";
+				TargetAttributes = {
+					1BF0B1CB1D9A8DDD0049641E = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5D5UZTHFS6;
+					};
+					1BF0B1DF1D9A8DE00049641E = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5D5UZTHFS6;
+						TestTargetID = 1BF0B1CB1D9A8DDD0049641E;
+					};
+					1BF0B1EA1D9A8DE00049641E = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5D5UZTHFS6;
+						TestTargetID = 1BF0B1CB1D9A8DDD0049641E;
+					};
+				};
+			};
+			buildConfigurationList = 1BF0B1C71D9A8DDD0049641E /* Build configuration list for PBXProject "Kondate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1BF0B1C31D9A8DDD0049641E;
+			productRefGroup = 1BF0B1CD1D9A8DDD0049641E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BF0B1CB1D9A8DDD0049641E /* Kondate */,
+				1BF0B1DF1D9A8DE00049641E /* KondateTests */,
+				1BF0B1EA1D9A8DE00049641E /* KondateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BF0B1CA1D9A8DDD0049641E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BF0B1DA1D9A8DDF0049641E /* LaunchScreen.storyboard in Resources */,
+				1BF0B1D71D9A8DDE0049641E /* Assets.xcassets in Resources */,
+				1BF0B1D51D9A8DDE0049641E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BF0B1DE1D9A8DE00049641E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BF0B1E91D9A8DE00049641E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BF0B1C81D9A8DDD0049641E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BF0B1D21D9A8DDE0049641E /* ViewController.swift in Sources */,
+				1BF0B1D01D9A8DDE0049641E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BF0B1DC1D9A8DE00049641E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BF0B1E51D9A8DE00049641E /* KondateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BF0B1E71D9A8DE00049641E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BF0B1F01D9A8DE00049641E /* KondateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BF0B1E21D9A8DE00049641E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BF0B1CB1D9A8DDD0049641E /* Kondate */;
+			targetProxy = 1BF0B1E11D9A8DE00049641E /* PBXContainerItemProxy */;
+		};
+		1BF0B1ED1D9A8DE00049641E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BF0B1CB1D9A8DDD0049641E /* Kondate */;
+			targetProxy = 1BF0B1EC1D9A8DE00049641E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1BF0B1D31D9A8DDE0049641E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BF0B1D41D9A8DDE0049641E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1BF0B1D81D9A8DDF0049641E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BF0B1D91D9A8DDF0049641E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1BF0B1F21D9A8DE00049641E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		1BF0B1F31D9A8DE00049641E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BF0B1F51D9A8DE00049641E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kondate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.Kondate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1BF0B1F61D9A8DE00049641E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kondate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.Kondate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1BF0B1F81D9A8DE00049641E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KondateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.KondateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kondate.app/Kondate";
+			};
+			name = Debug;
+		};
+		1BF0B1F91D9A8DE00049641E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KondateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.KondateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kondate.app/Kondate";
+			};
+			name = Release;
+		};
+		1BF0B1FB1D9A8DE00049641E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KondateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.KondateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Kondate;
+			};
+			name = Debug;
+		};
+		1BF0B1FC1D9A8DE00049641E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KondateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.KondateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Kondate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BF0B1C71D9A8DDD0049641E /* Build configuration list for PBXProject "Kondate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BF0B1F21D9A8DE00049641E /* Debug */,
+				1BF0B1F31D9A8DE00049641E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BF0B1F41D9A8DE00049641E /* Build configuration list for PBXNativeTarget "Kondate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BF0B1F51D9A8DE00049641E /* Debug */,
+				1BF0B1F61D9A8DE00049641E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1BF0B1F71D9A8DE00049641E /* Build configuration list for PBXNativeTarget "KondateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BF0B1F81D9A8DE00049641E /* Debug */,
+				1BF0B1F91D9A8DE00049641E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1BF0B1FA1D9A8DE00049641E /* Build configuration list for PBXNativeTarget "KondateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BF0B1FB1D9A8DE00049641E /* Debug */,
+				1BF0B1FC1D9A8DE00049641E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1BF0B1C41D9A8DDD0049641E /* Project object */;
+}
