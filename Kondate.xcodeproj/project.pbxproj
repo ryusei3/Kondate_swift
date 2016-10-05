@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B6F72C11DA50E2700E3F99B /* kensakuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6F72C01DA50E2700E3F99B /* kensakuViewController.swift */; };
+		1B6F72C31DA50E7900E3F99B /* kensakuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6F72C21DA50E7900E3F99B /* kensakuTableViewCell.swift */; };
+		1B6F72C51DA5174C00E3F99B /* okiniiriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6F72C41DA5174C00E3F99B /* okiniiriViewController.swift */; };
+		1B6F72C71DA5177200E3F99B /* okiniiriTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6F72C61DA5177200E3F99B /* okiniiriTableViewCell.swift */; };
 		1BF0B1D01D9A8DDE0049641E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0B1CF1D9A8DDE0049641E /* AppDelegate.swift */; };
-		1BF0B1D21D9A8DDE0049641E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D11D9A8DDE0049641E /* ViewController.swift */; };
 		1BF0B1D51D9A8DDE0049641E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D31D9A8DDE0049641E /* Main.storyboard */; };
 		1BF0B1D71D9A8DDE0049641E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D61D9A8DDE0049641E /* Assets.xcassets */; };
 		1BF0B1DA1D9A8DDF0049641E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D81D9A8DDF0049641E /* LaunchScreen.storyboard */; };
@@ -34,9 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B6F72C01DA50E2700E3F99B /* kensakuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kensakuViewController.swift; sourceTree = "<group>"; };
+		1B6F72C21DA50E7900E3F99B /* kensakuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kensakuTableViewCell.swift; sourceTree = "<group>"; };
+		1B6F72C41DA5174C00E3F99B /* okiniiriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = okiniiriViewController.swift; sourceTree = "<group>"; };
+		1B6F72C61DA5177200E3F99B /* okiniiriTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = okiniiriTableViewCell.swift; sourceTree = "<group>"; };
 		1BF0B1CC1D9A8DDD0049641E /* Kondate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kondate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BF0B1CF1D9A8DDE0049641E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1BF0B1D11D9A8DDE0049641E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1BF0B1D41D9A8DDE0049641E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BF0B1D61D9A8DDE0049641E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BF0B1D91D9A8DDF0049641E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				1BF0B1CF1D9A8DDE0049641E /* AppDelegate.swift */,
-				1BF0B1D11D9A8DDE0049641E /* ViewController.swift */,
 				1BF0B1D31D9A8DDE0049641E /* Main.storyboard */,
 				1BF0B1D61D9A8DDE0049641E /* Assets.xcassets */,
 				1BF0B1D81D9A8DDF0049641E /* LaunchScreen.storyboard */,
 				1BF0B1DB1D9A8DDF0049641E /* Info.plist */,
+				1B6F72C01DA50E2700E3F99B /* kensakuViewController.swift */,
+				1B6F72C21DA50E7900E3F99B /* kensakuTableViewCell.swift */,
+				1B6F72C41DA5174C00E3F99B /* okiniiriViewController.swift */,
+				1B6F72C61DA5177200E3F99B /* okiniiriTableViewCell.swift */,
 			);
 			path = Kondate;
 			sourceTree = "<group>";
@@ -259,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BF0B1D21D9A8DDE0049641E /* ViewController.swift in Sources */,
+				1B6F72C51DA5174C00E3F99B /* okiniiriViewController.swift in Sources */,
+				1B6F72C71DA5177200E3F99B /* okiniiriTableViewCell.swift in Sources */,
 				1BF0B1D01D9A8DDE0049641E /* AppDelegate.swift in Sources */,
+				1B6F72C11DA50E2700E3F99B /* kensakuViewController.swift in Sources */,
+				1B6F72C31DA50E7900E3F99B /* kensakuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +420,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.Kondate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -419,6 +432,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.Kondate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -487,6 +501,7 @@
 				1BF0B1F61D9A8DE00049641E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BF0B1F71D9A8DE00049641E /* Build configuration list for PBXNativeTarget "KondateTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +510,7 @@
 				1BF0B1F91D9A8DE00049641E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BF0B1FA1D9A8DE00049641E /* Build configuration list for PBXNativeTarget "KondateUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +519,7 @@
 				1BF0B1FC1D9A8DE00049641E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
