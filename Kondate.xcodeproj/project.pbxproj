@@ -15,8 +15,21 @@
 		1BF0B1D51D9A8DDE0049641E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D31D9A8DDE0049641E /* Main.storyboard */; };
 		1BF0B1D71D9A8DDE0049641E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D61D9A8DDE0049641E /* Assets.xcassets */; };
 		1BF0B1DA1D9A8DDF0049641E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0B1D81D9A8DDF0049641E /* LaunchScreen.storyboard */; };
-		1BF0B1E51D9A8DE00049641E /* KondateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0B1E41D9A8DE00049641E /* KondateTests.swift */; };
-		1BF0B1F01D9A8DE00049641E /* KondateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0B1EF1D9A8DE00049641E /* KondateUITests.swift */; };
+		460CC8141DC9F81900EBF626 /* 海鮮丼.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 460CC8131DC9F81900EBF626 /* 海鮮丼.jpg */; };
+		460CC8161DC9FB4D00EBF626 /* 鉄火丼.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 460CC8151DC9FB4D00EBF626 /* 鉄火丼.jpg */; };
+		460CC8181DC9FB5A00EBF626 /* カツ丼.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 460CC8171DC9FB5A00EBF626 /* カツ丼.jpg */; };
+		460CC81A1DC9FB6300EBF626 /* 牛丼.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 460CC8191DC9FB6300EBF626 /* 牛丼.jpg */; };
+		460CC81C1DC9FB6D00EBF626 /* 天丼.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 460CC81B1DC9FB6D00EBF626 /* 天丼.jpg */; };
+		460CC81E1DCA007E00EBF626 /* karenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CC81D1DCA007E00EBF626 /* karenderViewController.swift */; };
+		460CC8201DCA00F000EBF626 /* karenderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CC81F1DCA00F000EBF626 /* karenderCollectionViewCell.swift */; };
+		469BD2EE1DF81FAA0045654B /* kakikomiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469BD2ED1DF81FAA0045654B /* kakikomiViewController.swift */; };
+		5C9225E91EB761910005DC5E /* サンプル.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C9225E81EB761910005DC5E /* サンプル.png */; };
+		5C9225EB1EB7633E0005DC5E /* liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C9225EA1EB7633E0005DC5E /* liked.png */; };
+		5C989F021E2642DC00156A84 /* kondatemodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C989F001E2642DC00156A84 /* kondatemodel.xcdatamodeld */; };
+		5CB916221E2F7B7400B9CA52 /* Kondate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB916201E2F7B7400B9CA52 /* Kondate+CoreDataClass.swift */; };
+		5CB916231E2F7B7400B9CA52 /* Kondate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB916211E2F7B7400B9CA52 /* Kondate+CoreDataProperties.swift */; };
+		5CB916251E2F7D5E00B9CA52 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB916241E2F7D5E00B9CA52 /* DateManager.swift */; };
+		5CE484E61E66E610000959AA /* TabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE484E51E66E610000959AA /* TabBarDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +61,22 @@
 		1BF0B1D91D9A8DDF0049641E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BF0B1DB1D9A8DDF0049641E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BF0B1E01D9A8DE00049641E /* KondateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KondateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BF0B1E41D9A8DE00049641E /* KondateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KondateTests.swift; sourceTree = "<group>"; };
-		1BF0B1E61D9A8DE00049641E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BF0B1EB1D9A8DE00049641E /* KondateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KondateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BF0B1EF1D9A8DE00049641E /* KondateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KondateUITests.swift; sourceTree = "<group>"; };
-		1BF0B1F11D9A8DE00049641E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		460CC8131DC9F81900EBF626 /* 海鮮丼.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海鮮丼.jpg"; sourceTree = "<group>"; };
+		460CC8151DC9FB4D00EBF626 /* 鉄火丼.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "鉄火丼.jpg"; sourceTree = "<group>"; };
+		460CC8171DC9FB5A00EBF626 /* カツ丼.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "カツ丼.jpg"; sourceTree = "<group>"; };
+		460CC8191DC9FB6300EBF626 /* 牛丼.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "牛丼.jpg"; sourceTree = "<group>"; };
+		460CC81B1DC9FB6D00EBF626 /* 天丼.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "天丼.jpg"; sourceTree = "<group>"; };
+		460CC81D1DCA007E00EBF626 /* karenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = karenderViewController.swift; sourceTree = "<group>"; };
+		460CC81F1DCA00F000EBF626 /* karenderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = karenderCollectionViewCell.swift; sourceTree = "<group>"; };
+		469BD2ED1DF81FAA0045654B /* kakikomiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kakikomiViewController.swift; sourceTree = "<group>"; };
+		5C9225E81EB761910005DC5E /* サンプル.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "サンプル.png"; sourceTree = "<group>"; };
+		5C9225EA1EB7633E0005DC5E /* liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liked.png; sourceTree = "<group>"; };
+		5C989F011E2642DC00156A84 /* kondatemodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kondatemodel.xcdatamodel; sourceTree = "<group>"; };
+		5CB916201E2F7B7400B9CA52 /* Kondate+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Kondate+CoreDataClass.swift"; path = "Kondate/Kondate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5CB916211E2F7B7400B9CA52 /* Kondate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Kondate+CoreDataProperties.swift"; path = "Kondate/Kondate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5CB916241E2F7D5E00B9CA52 /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		5CE484E51E66E610000959AA /* TabBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +107,9 @@
 		1BF0B1C31D9A8DDD0049641E = {
 			isa = PBXGroup;
 			children = (
+				5CB916201E2F7B7400B9CA52 /* Kondate+CoreDataClass.swift */,
+				5CB916211E2F7B7400B9CA52 /* Kondate+CoreDataProperties.swift */,
 				1BF0B1CE1D9A8DDE0049641E /* Kondate */,
-				1BF0B1E31D9A8DE00049641E /* KondateTests */,
-				1BF0B1EE1D9A8DE00049641E /* KondateUITests */,
 				1BF0B1CD1D9A8DDD0049641E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +127,13 @@
 		1BF0B1CE1D9A8DDE0049641E /* Kondate */ = {
 			isa = PBXGroup;
 			children = (
+				5C9225E81EB761910005DC5E /* サンプル.png */,
+				5C9225EA1EB7633E0005DC5E /* liked.png */,
+				460CC81B1DC9FB6D00EBF626 /* 天丼.jpg */,
+				460CC8191DC9FB6300EBF626 /* 牛丼.jpg */,
+				460CC8171DC9FB5A00EBF626 /* カツ丼.jpg */,
+				460CC8151DC9FB4D00EBF626 /* 鉄火丼.jpg */,
+				460CC8131DC9F81900EBF626 /* 海鮮丼.jpg */,
 				1BF0B1CF1D9A8DDE0049641E /* AppDelegate.swift */,
 				1BF0B1D31D9A8DDE0049641E /* Main.storyboard */,
 				1BF0B1D61D9A8DDE0049641E /* Assets.xcassets */,
@@ -110,28 +141,16 @@
 				1BF0B1DB1D9A8DDF0049641E /* Info.plist */,
 				1B6F72C01DA50E2700E3F99B /* kensakuViewController.swift */,
 				1B6F72C21DA50E7900E3F99B /* kensakuTableViewCell.swift */,
+				460CC81D1DCA007E00EBF626 /* karenderViewController.swift */,
+				460CC81F1DCA00F000EBF626 /* karenderCollectionViewCell.swift */,
+				469BD2ED1DF81FAA0045654B /* kakikomiViewController.swift */,
+				5CB916241E2F7D5E00B9CA52 /* DateManager.swift */,
 				1B6F72C41DA5174C00E3F99B /* okiniiriViewController.swift */,
 				1B6F72C61DA5177200E3F99B /* okiniiriTableViewCell.swift */,
+				5C989F001E2642DC00156A84 /* kondatemodel.xcdatamodeld */,
+				5CE484E51E66E610000959AA /* TabBarDelegate.swift */,
 			);
 			path = Kondate;
-			sourceTree = "<group>";
-		};
-		1BF0B1E31D9A8DE00049641E /* KondateTests */ = {
-			isa = PBXGroup;
-			children = (
-				1BF0B1E41D9A8DE00049641E /* KondateTests.swift */,
-				1BF0B1E61D9A8DE00049641E /* Info.plist */,
-			);
-			path = KondateTests;
-			sourceTree = "<group>";
-		};
-		1BF0B1EE1D9A8DE00049641E /* KondateUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1BF0B1EF1D9A8DE00049641E /* KondateUITests.swift */,
-				1BF0B1F11D9A8DE00049641E /* Info.plist */,
-			);
-			path = KondateUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,21 +216,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "ryusei wakasa";
 				TargetAttributes = {
 					1BF0B1CB1D9A8DDD0049641E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 5D5UZTHFS6;
+						DevelopmentTeam = B4S4333JDW;
+						LastSwiftMigration = 0820;
 					};
 					1BF0B1DF1D9A8DE00049641E = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 5D5UZTHFS6;
+						LastSwiftMigration = 0820;
 						TestTargetID = 1BF0B1CB1D9A8DDD0049641E;
 					};
 					1BF0B1EA1D9A8DE00049641E = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 5D5UZTHFS6;
+						LastSwiftMigration = 0820;
 						TestTargetID = 1BF0B1CB1D9A8DDD0049641E;
 					};
 				};
@@ -241,9 +263,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460CC8161DC9FB4D00EBF626 /* 鉄火丼.jpg in Resources */,
+				5C9225E91EB761910005DC5E /* サンプル.png in Resources */,
 				1BF0B1DA1D9A8DDF0049641E /* LaunchScreen.storyboard in Resources */,
+				460CC81C1DC9FB6D00EBF626 /* 天丼.jpg in Resources */,
 				1BF0B1D71D9A8DDE0049641E /* Assets.xcassets in Resources */,
+				460CC81A1DC9FB6300EBF626 /* 牛丼.jpg in Resources */,
+				460CC8181DC9FB5A00EBF626 /* カツ丼.jpg in Resources */,
 				1BF0B1D51D9A8DDE0049641E /* Main.storyboard in Resources */,
+				5C9225EB1EB7633E0005DC5E /* liked.png in Resources */,
+				460CC8141DC9F81900EBF626 /* 海鮮丼.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +297,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CB916231E2F7B7400B9CA52 /* Kondate+CoreDataProperties.swift in Sources */,
+				5CB916251E2F7D5E00B9CA52 /* DateManager.swift in Sources */,
+				460CC81E1DCA007E00EBF626 /* karenderViewController.swift in Sources */,
+				5CB916221E2F7B7400B9CA52 /* Kondate+CoreDataClass.swift in Sources */,
+				5CE484E61E66E610000959AA /* TabBarDelegate.swift in Sources */,
+				469BD2EE1DF81FAA0045654B /* kakikomiViewController.swift in Sources */,
 				1B6F72C51DA5174C00E3F99B /* okiniiriViewController.swift in Sources */,
+				460CC8201DCA00F000EBF626 /* karenderCollectionViewCell.swift in Sources */,
 				1B6F72C71DA5177200E3F99B /* okiniiriTableViewCell.swift in Sources */,
 				1BF0B1D01D9A8DDE0049641E /* AppDelegate.swift in Sources */,
 				1B6F72C11DA50E2700E3F99B /* kensakuViewController.swift in Sources */,
+				5C989F021E2642DC00156A84 /* kondatemodel.xcdatamodeld in Sources */,
 				1B6F72C31DA50E7900E3F99B /* kensakuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BF0B1E51D9A8DE00049641E /* KondateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BF0B1F01D9A8DE00049641E /* KondateUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,8 +376,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -387,8 +424,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -407,6 +446,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -416,10 +456,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = Kondate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.Kondate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.test.Kondate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -428,10 +471,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = Kondate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.Kondate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.test.Kondate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -444,6 +490,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.KondateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kondate.app/Kondate";
 			};
 			name = Debug;
@@ -456,6 +503,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.KondateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kondate.app/Kondate";
 			};
 			name = Release;
@@ -467,6 +515,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.KondateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Kondate;
 			};
 			name = Debug;
@@ -478,6 +527,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryusei.KondateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Kondate;
 			};
 			name = Release;
@@ -522,6 +572,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5C989F001E2642DC00156A84 /* kondatemodel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5C989F011E2642DC00156A84 /* kondatemodel.xcdatamodel */,
+			);
+			currentVersion = 5C989F011E2642DC00156A84 /* kondatemodel.xcdatamodel */;
+			path = kondatemodel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1BF0B1C41D9A8DDD0049641E /* Project object */;
 }
