@@ -2,7 +2,7 @@
 //  Kondate+CoreDataProperties.swift
 //  Kondate
 //
-//  Created by ryusei3 on 2017/05/10.
+//  Created by ryusei3 on 2017/05/31.
 //  Copyright © 2017年 ryusei wakasa. All rights reserved.
 //
 
@@ -21,8 +21,10 @@ extension Kondate {
     @NSManaged public var date: NSDate?
     @NSManaged public var hirugohan: String?
     @NSManaged public var hirugohanimage: NSData?
+    @NSManaged public var asalikenumber: Int32
     @NSManaged public var yorugohan: String?
     @NSManaged public var yorugohanimage: NSData?
-    @NSManaged public var likenumber: Int32
+    @NSManaged public var hirulikenumber: Int32
+    @NSManaged public var yorulikenumber: Int32
 
 }

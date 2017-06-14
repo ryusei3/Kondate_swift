@@ -391,7 +391,6 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
             fetchData[0].asagohanimage = UIImagePNGRepresentation(asacameraImageView.image ?? UIImage()) as? NSData
             fetchData[0].hirugohanimage = UIImagePNGRepresentation(hirucameraImageView.image ?? UIImage()) as? NSData
             fetchData[0].yorugohanimage = UIImagePNGRepresentation(yorucameraImageView.image ?? UIImage())  as? NSData
-            fetchData[0].likenumber = 0
         } else {
             // 無ければつくる
             let kondate = Kondate(context: viewContext)
@@ -402,6 +401,9 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
             kondate.asagohanimage = UIImagePNGRepresentation(asacameraImageView.image ?? UIImage()) as? NSData
             kondate.hirugohanimage = UIImagePNGRepresentation(hirucameraImageView.image ?? UIImage()) as? NSData
             kondate.yorugohanimage = UIImagePNGRepresentation(yorucameraImageView.image ?? UIImage()) as? NSData
+            kondate.asalikenumber = 0
+            kondate.hirulikenumber = 0
+            kondate.yorulikenumber = 0
             
         }
         // 最後にセーブ処理

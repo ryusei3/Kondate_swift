@@ -22,9 +22,9 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var likenumberArray = [Int]()
     
-    var ryouriArray = [(String?, UIImage?, NSDate, Int)]()
+    var ryouriArray = [(String?, UIImage?, NSDate, Int, Int)]()
     
-    var searchResult = [(String?, UIImage?, NSDate, Int)]()
+    var searchResult = [(String?, UIImage?, NSDate, Int, Int)]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,54 +34,6 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
         table.dataSource = self
         
         table.delegate = self
-        
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let viewContext = appDelegate.persistentContainer.viewContext
-        let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
-        let fetchData = try! viewContext.fetch(query)
-        
-        ryourinameArray = []
-        ryouriviewArray = []
-        ryouritimeArray = []
-        likenumberArray = []
-        ryouriArray = []
-        
-        for data in fetchData {
-            ryourinameArray.append(data.asagohan)
-            
-            ryourinameArray.append(data.hirugohan)
-            
-            ryourinameArray.append(data.yorugohan)
-            
-            ryouriviewArray.append(UIImage(data: data.asagohanimage as? Data ?? Data()))
-            
-            ryouriviewArray.append(UIImage(data: data.hirugohanimage as? Data ?? Data()))
-            
-            ryouriviewArray.append(UIImage(data: data.yorugohanimage as? Data ?? Data()))
-            
-            ryouritimeArray.append(data.date!)
-            
-            ryouritimeArray.append(data.date!)
-            
-            ryouritimeArray.append(data.date!)
-            
-            likenumberArray.append(Int(data.likenumber))
-            
-            likenumberArray.append(Int(data.likenumber))
-            
-            likenumberArray.append(Int(data.likenumber))
-        }
-        
-        
-        
-            for i in 0..<ryourinameArray.count {
-            if ryouriviewArray[i] != nil && ryourinameArray[i]! != nil {
-             ryouriArray.append((ryourinameArray[i], ryouriviewArray[i], ryouritimeArray[i], likenumberArray[i]))
-            }
-            
-        }
-        
-        searchResult = ryouriArray
         
         testSearchBar.delegate = self
         
@@ -94,64 +46,9 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        table.dataSource = self
-        
-        table.delegate = self
-        
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let viewContext = appDelegate.persistentContainer.viewContext
-        let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
-        let fetchData = try! viewContext.fetch(query)
-        
-        ryourinameArray = []
-        ryouriviewArray = []
-        ryouritimeArray = []
-        likenumberArray = []
-        ryouriArray = []
-        
-        for data in fetchData {
-            ryourinameArray.append(data.asagohan)
-            
-            ryourinameArray.append(data.hirugohan)
-            
-            ryourinameArray.append(data.yorugohan)
-            
-            ryouriviewArray.append(UIImage(data: data.asagohanimage as? Data ?? Data()))
-            
-            ryouriviewArray.append(UIImage(data: data.hirugohanimage as? Data ?? Data()))
-            
-            ryouriviewArray.append(UIImage(data: data.yorugohanimage as? Data ?? Data()))
-            
-            ryouritimeArray.append(data.date!)
-            
-            ryouritimeArray.append(data.date!)
-            
-            ryouritimeArray.append(data.date!)
-            
-            likenumberArray.append(Int(data.likenumber))
-            
-            likenumberArray.append(Int(data.likenumber))
-            
-            likenumberArray.append(Int(data.likenumber))
-        }
-        
-        
-        
-        for i in 0..<ryourinameArray.count {
-            if ryouriviewArray[i] != nil && ryourinameArray[i]! != nil {
-                ryouriArray.append((ryourinameArray[i], ryouriviewArray[i], ryouritimeArray[i], likenumberArray[i]))
-            }
-            
-        }
-        
-        searchResult = ryouriArray
-        
-        testSearchBar.delegate = self
-        
-        testSearchBar.enablesReturnKeyAutomatically = false
-
-        
-        table.reloadData()
+    
+        reloadData()
+    
     }
     
 
@@ -160,62 +57,12 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func likeButton() {
-        print("いいね！")
-        
-    }
     
    
     
     func didSelectTab(_ tabBarController: TabBarController) {
         
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let viewContext = appDelegate.persistentContainer.viewContext
-        let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
-        let fetchData = try! viewContext.fetch(query)
-        
-        ryourinameArray = []
-        ryouriviewArray = []
-        ryouritimeArray = []
-        likenumberArray = []
-        ryouriArray = []
-        
-        for data in fetchData {
-            ryourinameArray.append(data.asagohan)
-            
-            ryourinameArray.append(data.hirugohan)
-            
-            ryourinameArray.append(data.yorugohan)
-            
-            ryouriviewArray.append(UIImage(data: data.asagohanimage as? Data ?? Data()))
-            
-            ryouriviewArray.append(UIImage(data: data.hirugohanimage as? Data ?? Data()))
-            
-            ryouriviewArray.append(UIImage(data: data.yorugohanimage as? Data ?? Data()))
-            
-            ryouritimeArray.append(data.date!)
-            
-            ryouritimeArray.append(data.date!)
-            
-            ryouritimeArray.append(data.date!)
-            
-            likenumberArray.append(Int(data.likenumber))
-            
-            likenumberArray.append(Int(data.likenumber))
-            
-            likenumberArray.append(Int(data.likenumber))
-        }
-        
-        for i in 0..<ryourinameArray.count {
-            if ryouriviewArray[i] != nil && ryourinameArray[i]! != nil {
-                ryouriArray.append((ryourinameArray[i], ryouriviewArray[i], ryouritimeArray[i], likenumberArray[i]))
-            }
-            
-        }
-        
-        searchResult = ryouriArray
-        
-        table.reloadData()
+        reloadData()
 
     }
     
@@ -234,14 +81,40 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
         
         cell.likenumber =  searchResult[indexPath.row].3
         
-        cell.date = searchResult[indexPath.row].2 as Date
         
         cell.likeFunc = { i in
-            self.searchResult[indexPath.row].3 = i
+            let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            let viewContext = appDelegate.persistentContainer.viewContext
+            let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
+            
+            let calendar = Calendar(identifier: .gregorian)
+            let target = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: self.searchResult[indexPath.row].2 as Date)!
+            
+            // dateで指定した日の0時0分0秒から23時59分59秒の間にあるかどうかという検索条件
+            query.predicate = NSPredicate(format: "SELF.date BETWEEN {%@, %@}",
+                                          argumentArray: [target, Date(timeInterval: 24*60*60-1, since: target)])
+            let fetchData = try! viewContext.fetch(query)
+            
+            switch self.searchResult[indexPath.row].4 {
+            case 0:
+                fetchData[0].asalikenumber = Int32(i)
+            case 1:
+                fetchData[0].hirulikenumber = Int32(i)
+            case 2:
+                fetchData[0].yorulikenumber = Int32(i)
+            default:
+                break
+            }
+            do {
+                try viewContext.save()
+            } catch {
+                print(error)
+            }
+            self.reloadData()
         }
         
         if cell.likenumber == 1 {
-            cell.likeButton.setImage(#imageLiteral(resourceName: "liked.png"), for: .normal)
+            cell.likeButton.setImage(#imageLiteral(resourceName: "サンプルのコピー.png"), for: .normal)
 
         }else{
             cell.likeButton.setImage(#imageLiteral(resourceName: "サンプル.png"), for: .normal)
@@ -249,6 +122,23 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         return cell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchResult.removeAll()
+        
+        if (testSearchBar.text == "") {
+            searchResult = ryouriArray
+        }else{
+            for data in ryouriArray {
+                if (data.0?.contains(testSearchBar.text!))! {
+                    searchResult.append(data)
+                }
+            }
+        }
+        
+        table.reloadData()
+
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -289,6 +179,58 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
             // SubViewController のselectedImgに選択された画像を設定する
             subVC.date = sender as! Date        }
     }
+    
+    func reloadData() {
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let viewContext = appDelegate.persistentContainer.viewContext
+        let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
+        let fetchData = try! viewContext.fetch(query)
+        
+        ryourinameArray = []
+        ryouriviewArray = []
+        ryouritimeArray = []
+        likenumberArray = []
+        ryouriArray = []
+        
+        for data in fetchData {
+            ryourinameArray.append(data.asagohan)
+            
+            ryourinameArray.append(data.hirugohan)
+            
+            ryourinameArray.append(data.yorugohan)
+            
+            ryouriviewArray.append(UIImage(data: data.asagohanimage as? Data ?? Data()))
+            
+            ryouriviewArray.append(UIImage(data: data.hirugohanimage as? Data ?? Data()))
+            
+            ryouriviewArray.append(UIImage(data: data.yorugohanimage as? Data ?? Data()))
+            
+            ryouritimeArray.append(data.date!)
+            
+            ryouritimeArray.append(data.date!)
+            
+            ryouritimeArray.append(data.date!)
+            
+            likenumberArray.append(Int(data.asalikenumber))
+            
+            likenumberArray.append(Int(data.hirulikenumber))
+            
+            likenumberArray.append(Int(data.yorulikenumber))
+        }
+        
+        for i in 0..<ryourinameArray.count {
+            if ryouriviewArray[i] != nil && ryourinameArray[i] != nil {
+                ryouriArray.append((ryourinameArray[i], ryouriviewArray[i], ryouritimeArray[i], likenumberArray[i], i%3))
+            }
+            
+        }
+        
+        searchResult = ryouriArray
+        
+        table.reloadData()
+    }
+    
+    
     
 
     /*

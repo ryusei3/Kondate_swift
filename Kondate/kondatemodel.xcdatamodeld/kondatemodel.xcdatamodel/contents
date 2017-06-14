@@ -3,14 +3,16 @@
     <entity name="Kondate" representedClassName=".Kondate" syncable="YES">
         <attribute name="asagohan" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="asagohanimage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="asalikenumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="hirugohan" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hirugohanimage" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="likenumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hirulikenumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="yorugohan" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="yorugohanimage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="yorulikenumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Kondate" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Kondate" positionX="-63" positionY="-18" width="128" height="195"/>
     </elements>
 </model>
