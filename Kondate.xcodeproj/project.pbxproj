@@ -24,6 +24,9 @@
 		460CC8201DCA00F000EBF626 /* karenderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CC81F1DCA00F000EBF626 /* karenderCollectionViewCell.swift */; };
 		469BD2EE1DF81FAA0045654B /* kakikomiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469BD2ED1DF81FAA0045654B /* kakikomiViewController.swift */; };
 		5C989F021E2642DC00156A84 /* kondatemodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C989F001E2642DC00156A84 /* kondatemodel.xcdatamodeld */; };
+		5CA313FF1EFA87EA001C7A74 /* icon_139140_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CA313FE1EFA87EA001C7A74 /* icon_139140_256.png */; };
+		5CA314011EFA8842001C7A74 /* icon_157110_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CA314001EFA8842001C7A74 /* icon_157110_256.png */; };
+		5CA314051EFA88D9001C7A74 /* サンプルのコピー3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CA314041EFA88D9001C7A74 /* サンプルのコピー3.png */; };
 		5CAF4A431EDEC76F0010AF2D /* サンプル.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CAF4A421EDEC76F0010AF2D /* サンプル.png */; };
 		5CAF4A451EDEC8670010AF2D /* サンプルのコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CAF4A441EDEC8670010AF2D /* サンプルのコピー.png */; };
 		5CB916221E2F7B7400B9CA52 /* Kondate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB916201E2F7B7400B9CA52 /* Kondate+CoreDataClass.swift */; };
@@ -71,6 +74,9 @@
 		460CC81F1DCA00F000EBF626 /* karenderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = karenderCollectionViewCell.swift; sourceTree = "<group>"; };
 		469BD2ED1DF81FAA0045654B /* kakikomiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kakikomiViewController.swift; sourceTree = "<group>"; };
 		5C989F011E2642DC00156A84 /* kondatemodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kondatemodel.xcdatamodel; sourceTree = "<group>"; };
+		5CA313FE1EFA87EA001C7A74 /* icon_139140_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_139140_256.png; sourceTree = "<group>"; };
+		5CA314001EFA8842001C7A74 /* icon_157110_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_157110_256.png; sourceTree = "<group>"; };
+		5CA314041EFA88D9001C7A74 /* サンプルのコピー3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "サンプルのコピー3.png"; sourceTree = "<group>"; };
 		5CAF4A421EDEC76F0010AF2D /* サンプル.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "サンプル.png"; sourceTree = "<group>"; };
 		5CAF4A441EDEC8670010AF2D /* サンプルのコピー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "サンプルのコピー.png"; sourceTree = "<group>"; };
 		5CB916201E2F7B7400B9CA52 /* Kondate+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Kondate+CoreDataClass.swift"; path = "Kondate/Kondate+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -127,6 +133,9 @@
 		1BF0B1CE1D9A8DDE0049641E /* Kondate */ = {
 			isa = PBXGroup;
 			children = (
+				5CA314041EFA88D9001C7A74 /* サンプルのコピー3.png */,
+				5CA314001EFA8842001C7A74 /* icon_157110_256.png */,
+				5CA313FE1EFA87EA001C7A74 /* icon_139140_256.png */,
 				5CAF4A441EDEC8670010AF2D /* サンプルのコピー.png */,
 				5CAF4A421EDEC76F0010AF2D /* サンプル.png */,
 				460CC81B1DC9FB6D00EBF626 /* 天丼.jpg */,
@@ -266,11 +275,14 @@
 				460CC8161DC9FB4D00EBF626 /* 鉄火丼.jpg in Resources */,
 				1BF0B1DA1D9A8DDF0049641E /* LaunchScreen.storyboard in Resources */,
 				460CC81C1DC9FB6D00EBF626 /* 天丼.jpg in Resources */,
+				5CA313FF1EFA87EA001C7A74 /* icon_139140_256.png in Resources */,
 				1BF0B1D71D9A8DDE0049641E /* Assets.xcassets in Resources */,
 				460CC81A1DC9FB6300EBF626 /* 牛丼.jpg in Resources */,
 				460CC8181DC9FB5A00EBF626 /* カツ丼.jpg in Resources */,
+				5CA314051EFA88D9001C7A74 /* サンプルのコピー3.png in Resources */,
 				1BF0B1D51D9A8DDE0049641E /* Main.storyboard in Resources */,
 				5CAF4A431EDEC76F0010AF2D /* サンプル.png in Resources */,
+				5CA314011EFA8842001C7A74 /* icon_157110_256.png in Resources */,
 				5CAF4A451EDEC8670010AF2D /* サンプルのコピー.png in Resources */,
 				460CC8141DC9F81900EBF626 /* 海鮮丼.jpg in Resources */,
 			);

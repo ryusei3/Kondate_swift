@@ -29,6 +29,9 @@ class okiniiriViewController: UIViewController, UITableViewDataSource,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9412038536, green: 0.7022952496, blue: 0.4388047765, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        
         
         
         
@@ -131,7 +134,13 @@ class okiniiriViewController: UIViewController, UITableViewDataSource,UITableVie
         searchResult.removeAll()
         
         if (SearchBar.text == "") {
-            searchResult = ryouriArray
+            
+                for data in ryouriArray {
+                    if data.3 == 1 {
+                        searchResult.append(data)
+                    }
+                }
+
         }else{
             for data in ryouriArray {
                 if (data.0?.contains(SearchBar.text!))! {
@@ -153,7 +162,12 @@ class okiniiriViewController: UIViewController, UITableViewDataSource,UITableVie
         searchResult.removeAll()
         
         if (SearchBar.text == "") {
-            searchResult = ryouriArray
+            
+            for data in ryouriArray {
+                if data.3 == 1 {
+                    searchResult.append(data)
+                }
+            }
         }else{
             for data in ryouriArray {
                 if (data.0?.contains(SearchBar.text!))! {

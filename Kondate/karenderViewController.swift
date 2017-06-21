@@ -35,6 +35,8 @@ class karenderViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         //navigationController?.title = changeHeaderTitle(selectedDate)
         myNavigationItem.title = changeHeaderTitle(selectedDate)
         
@@ -45,6 +47,11 @@ class karenderViewController: UIViewController, UICollectionViewDataSource, UICo
 
         
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.03130810799, green: 0.7781472457, blue: 0.8365851684, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9667228596, green: 0.9346891378, blue: 1, alpha: 1)
     }
 
     override func didReceiveMemoryWarning() {

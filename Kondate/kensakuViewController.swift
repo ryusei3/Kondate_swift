@@ -29,6 +29,9 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.05620383162, green: 0.1511129789, blue: 0.7838204339, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        
         
         
         table.dataSource = self

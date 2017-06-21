@@ -41,6 +41,10 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1046803971, green: 0.7349821891, blue: 0.04140474083, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9667228596, green: 0.9346891378, blue: 1, alpha: 1)
+        
         
         asacameraImageView.tag = 100
         asacameraImageView.isUserInteractionEnabled  = true
