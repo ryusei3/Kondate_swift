@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate ,UITextViewDelegate{
     
     @IBOutlet var asacameraImageView: UIImageView!
     @IBOutlet var hirucameraImageView: UIImageView!
@@ -98,270 +98,25 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
             yorutuikaLabel.isHidden = true
         }
         
+//        let widthMax = view.frame.size.width
+        
+        
+//        var accessoryView = UIView(frame: CGRect(x: 0,y:  0,width: widthMax,height: 44))
+//        accessoryView.backgroundColor = UIColor.white
+//        var closeButton = UIButton(frame: CGRect(x: 100,y:  100,width: 100,height: 30))
+//        closeButton.setTitle("完了", for: UIControlState.normal)
+//        closeButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+//        closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.right
+//        closeButton.addTarget(self, action: "onClickCloseButton:", for: .touchUpInside)
+//        accessoryView.addSubview(closeButton)
+//        asagohanTextField.inputAccessoryView = accessoryView
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first
-        if touch?.view?.tag == asacameraImageView.tag {
-            print("朝ごはんの画像がタップされました")
-            let actionSheet = UIAlertController(title: "メディアの選択", message: "どのアプリのメディアを使いますか？", preferredStyle: UIAlertControllerStyle.actionSheet)
-            sikibetunumber = 0
-            let action1 = UIAlertAction(title: "カメラで撮る", style: UIAlertActionStyle.default, handler: {
-                (action: UIAlertAction!) in
-                print("アクション１をタップした時の処理")
-                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-                    // カメラを起動する
-                    let picker = UIImagePickerController()
-                    picker.sourceType = UIImagePickerControllerSourceType.camera
-                    picker.delegate = self
-                    
-                    // カメラを自由な形に開きたい時（特に正方形）
-                    picker.allowsEditing = true
-                    
-                    self.present(picker, animated: true, completion: nil)
-                } else {
-                    // カメラが利用できないときはerrorがコンソールに表示される
-                    print("error")
-                }
-            })
-            
-            let action2 = UIAlertAction(title: "写真から選ぶ", style: UIAlertActionStyle.default, handler: {
-                (action: UIAlertAction!) in
-                print("アクション２をタップした時の処理")
-                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-                    let picker = UIImagePickerController()
-                    picker.delegate = self
-                    picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-                    
-                    // カメラを自由な形に開きたい時（今回は正方形）
-                    picker.allowsEditing = true
-                    
-                    // アプリ画面へ戻る
-                    self.present(picker, animated: true, completion: nil)
-                }
-            })
-            
-            let action3 = UIAlertAction(title: "画像を削除", style: UIAlertActionStyle.destructive, handler: {
-                (action: UIAlertAction!) in
-                print("アクション３をタップした時の処理")
-                let alert = UIAlertController(title: "確認", message: "本当に削除しますか？", preferredStyle: UIAlertControllerStyle.alert)
-                
-                let action1 = UIAlertAction(title: "削除", style: UIAlertActionStyle.destructive, handler: {
-                    (action: UIAlertAction!) in
-                    print("削除が押されました")
-                    self.asacameraImageView.image = nil
-                    //self.asabatuButton.isHidden = true
-                    self.asatuikaLabel.isHidden = false
-                })
-                
-                
-                
-                let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
-                    (action: UIAlertAction!) in
-                    print("キャンセルをタップした時の処理")
-                })
-                
-                alert.addAction(action1)
-                alert.addAction(cancel)
-                
-                self.present(alert, animated: true, completion: nil)
-                
-                
-            })
-            
-            
-            
-            let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
-                (action: UIAlertAction!) in
-                print("キャンセルをタップした時の処理")
-            })
-            
-            actionSheet.addAction(action1)
-            actionSheet.addAction(action2)
-            actionSheet.addAction(cancel)
-            if asacameraImageView.image != nil {
-                actionSheet.addAction(action3)
-            }
-            
-            self.present(actionSheet, animated: true, completion: nil)
-            
-            
-        }
-        
-        
-        
-        if touch?.view?.tag == hirucameraImageView.tag {
-            
-            print("昼ごはんの画像がタップされました")
-            let actionSheet = UIAlertController(title: "メディアの選択", message: "どのアプリのメディアを使いますか？", preferredStyle: UIAlertControllerStyle.actionSheet)
-            sikibetunumber = 1
-            let action1 = UIAlertAction(title: "カメラで撮る", style: UIAlertActionStyle.default, handler: {
-                (action: UIAlertAction!) in
-                print("アクション１をタップした時の処理")
-                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-                    // カメラを起動する
-                    let picker = UIImagePickerController()
-                    picker.sourceType = UIImagePickerControllerSourceType.camera
-                    picker.delegate = self
-                    
-                    // カメラを自由な形に開きたい時（特に正方形）
-                    picker.allowsEditing = true
-                    
-                    self.present(picker, animated: true, completion: nil)
-                } else {
-                    // カメラが利用できないときはerrorがコンソールに表示される
-                    print("error")
-                }
-            })
-            
-            let action2 = UIAlertAction(title: "写真から選ぶ", style: UIAlertActionStyle.default, handler: {
-                (action: UIAlertAction!) in
-                print("アクション２をタップした時の処理")
-                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-                    let picker = UIImagePickerController()
-                    picker.delegate = self
-                    picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-                    
-                    // カメラを自由な形に開きたい時（今回は正方形）
-                    picker.allowsEditing = true
-                    
-                    // アプリ画面へ戻る
-                    self.present(picker, animated: true, completion: nil)
-                }
-            })
-            
-            let action3 = UIAlertAction(title: "画像を削除", style: UIAlertActionStyle.default, handler: {
-                (action: UIAlertAction!) in
-                print("アクション３をタップした時の処理")
-                let alert = UIAlertController(title: "確認", message: "本当に削除しますか？", preferredStyle: UIAlertControllerStyle.alert)
-                
-                let action1 = UIAlertAction(title: "削除", style: UIAlertActionStyle.destructive, handler: {
-                    (action: UIAlertAction!) in
-                    print("削除が押されました")
-                    self.hirucameraImageView.image = nil
-                    //self.asabatuButton.isHidden = true
-                    self.hirutuikaLabel.isHidden = false
-                })
-                
-                
-                
-                let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
-                    (action: UIAlertAction!) in
-                    print("キャンセルをタップした時の処理")
-                })
-                
-                alert.addAction(action1)
-                alert.addAction(cancel)
-                
-                self.present(alert, animated: true, completion: nil)
-                
-                
-            })
-            
-            
-            
-            let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
-                (action: UIAlertAction!) in
-                print("キャンセルをタップした時の処理")
-            })
-            
-            actionSheet.addAction(action1)
-            actionSheet.addAction(action2)
-            actionSheet.addAction(cancel)
-            if hirucameraImageView.image != nil {
-                actionSheet.addAction(action3)
-            }
-            
-            self.present(actionSheet, animated: true, completion: nil)
-            
-        }
-        if touch?.view?.tag == yorucameraImageView.tag {
-            print("夜ごはんの画像がタップされました")
-            let actionSheet = UIAlertController(title: "メディアの選択", message: "どのアプリのメディアを使いますか？", preferredStyle: UIAlertControllerStyle.actionSheet)
-            sikibetunumber = 2
-            let action1 = UIAlertAction(title: "カメラで撮る", style: UIAlertActionStyle.default, handler: {
-                (action: UIAlertAction!) in
-                print("アクション１をタップした時の処理")
-                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-                    // カメラを起動する
-                    let picker = UIImagePickerController()
-                    picker.sourceType = UIImagePickerControllerSourceType.camera
-                    picker.delegate = self
-                    
-                    // カメラを自由な形に開きたい時（特に正方形）
-                    picker.allowsEditing = true
-                    
-                    self.present(picker, animated: true, completion: nil)
-                } else {
-                    // カメラが利用できないときはerrorがコンソールに表示される
-                    print("error")
-                }
-            })
-            
-            let action2 = UIAlertAction(title: "写真から選ぶ", style: UIAlertActionStyle.default, handler: {
-                (action: UIAlertAction!) in
-                print("アクション２をタップした時の処理")
-                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-                    let picker = UIImagePickerController()
-                    picker.delegate = self
-                    picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-                    
-                    // カメラを自由な形に開きたい時（今回は正方形）
-                    picker.allowsEditing = true
-                    
-                    // アプリ画面へ戻る
-                    self.present(picker, animated: true, completion: nil)
-                }
-            })
-            
-            let action3 = UIAlertAction(title: "画像を削除", style: UIAlertActionStyle.default, handler: {
-                (action: UIAlertAction!) in
-                print("アクション３をタップした時の処理")
-                let alert = UIAlertController(title: "確認", message: "本当に削除しますか？", preferredStyle: UIAlertControllerStyle.alert)
-                
-                let action1 = UIAlertAction(title: "削除", style: UIAlertActionStyle.destructive, handler: {
-                    (action: UIAlertAction!) in
-                    print("削除が押されました")
-                    self.yorucameraImageView.image = nil
-                    //self.asabatuButton.isHidden = true
-                    self.yorutuikaLabel.isHidden = false
-                })
-                
-                
-                
-                let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
-                    (action: UIAlertAction!) in
-                    print("キャンセルをタップした時の処理")
-                })
-                
-                alert.addAction(action1)
-                alert.addAction(cancel)
-                
-                self.present(alert, animated: true, completion: nil)
-                
-                
-            })
-            
-            
-            
-            let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
-                (action: UIAlertAction!) in
-                print("キャンセルをタップした時の処理")
-            })
-            
-            actionSheet.addAction(action1)
-            actionSheet.addAction(action2)
-            actionSheet.addAction(cancel)
-            if yorucameraImageView.image != nil {
-                actionSheet.addAction(action3)
-            }
-            
-            self.present(actionSheet, animated: true, completion: nil)
-            
-        }
-        
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.03130810799, green: 0.7781472457, blue: 0.8365851684, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9667228596, green: 0.9346891378, blue: 1, alpha: 1)
     }
     
     
@@ -451,6 +206,295 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
         
     }
     
+    @IBAction func asatap() {
+        
+        
+            print("朝ごはんの画像がタップされました")
+            let actionSheet = UIAlertController(title: "メディアの選択", message: "どのアプリのメディアを使いますか？", preferredStyle: UIAlertControllerStyle.actionSheet)
+            sikibetunumber = 0
+            let action1 = UIAlertAction(title: "カメラで撮る", style: UIAlertActionStyle.default, handler: {
+                (action: UIAlertAction!) in
+                print("アクション１をタップした時の処理")
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+                    // カメラを起動する
+                    let picker = UIImagePickerController()
+                    picker.sourceType = UIImagePickerControllerSourceType.camera
+                    picker.delegate = self
+                    
+                    // カメラを自由な形に開きたい時（特に正方形）
+                    picker.allowsEditing = true
+                    
+                    self.present(picker, animated: true, completion: nil)
+                } else {
+                    // カメラが利用できないときはerrorがコンソールに表示される
+                    print("error")
+                }
+            })
+            
+            let action2 = UIAlertAction(title: "写真から選ぶ", style: UIAlertActionStyle.default, handler: {
+                (action: UIAlertAction!) in
+                print("アクション２をタップした時の処理")
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+                    let picker = UIImagePickerController()
+                    picker.delegate = self
+                    picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+                    
+                    // カメラを自由な形に開きたい時（今回は正方形）
+                    picker.allowsEditing = true
+                    
+                    // アプリ画面へ戻る
+                    self.present(picker, animated: true, completion: nil)
+                }
+            })
+            
+            let action3 = UIAlertAction(title: "画像を削除", style: UIAlertActionStyle.destructive, handler: {
+                (action: UIAlertAction!) in
+                print("アクション３をタップした時の処理")
+                let alert = UIAlertController(title: "確認", message: "本当に削除しますか？", preferredStyle: UIAlertControllerStyle.alert)
+                
+                let action1 = UIAlertAction(title: "削除", style: UIAlertActionStyle.destructive, handler: {
+                    (action: UIAlertAction!) in
+                    print("削除が押されました")
+                    self.asacameraImageView.image = nil
+                    //self.asabatuButton.isHidden = true
+                    self.asatuikaLabel.isHidden = false
+                })
+                
+                
+                
+                let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
+                    (action: UIAlertAction!) in
+                    print("キャンセルをタップした時の処理")
+                })
+                
+                alert.addAction(action1)
+                alert.addAction(cancel)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                
+            })
+            
+            
+            
+            let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
+                (action: UIAlertAction!) in
+                print("キャンセルをタップした時の処理")
+            })
+            
+            actionSheet.addAction(action1)
+            actionSheet.addAction(action2)
+            actionSheet.addAction(cancel)
+            if asacameraImageView.image != nil {
+                actionSheet.addAction(action3)
+            }
+            
+            self.present(actionSheet, animated: true, completion: nil)
+            
+            
+        
+
+    }
+    
+    @IBAction func asapress(sender: UILongPressGestureRecognizer) {
+    
+        if asacameraImageView.image != nil {
+            performSegue(withIdentifier: "toimage", sender: asacameraImageView.image)
+        }
+     
+        
+    }
+    
+    @IBAction func hirutap() {
+        print("昼ごはんの画像がタップされました")
+        let actionSheet = UIAlertController(title: "メディアの選択", message: "どのアプリのメディアを使いますか？", preferredStyle: UIAlertControllerStyle.actionSheet)
+        sikibetunumber = 1
+        let action1 = UIAlertAction(title: "カメラで撮る", style: UIAlertActionStyle.default, handler: {
+            (action: UIAlertAction!) in
+            print("アクション１をタップした時の処理")
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+                // カメラを起動する
+                let picker = UIImagePickerController()
+                picker.sourceType = UIImagePickerControllerSourceType.camera
+                picker.delegate = self
+                
+                // カメラを自由な形に開きたい時（特に正方形）
+                picker.allowsEditing = true
+                
+                self.present(picker, animated: true, completion: nil)
+            } else {
+                // カメラが利用できないときはerrorがコンソールに表示される
+                print("error")
+            }
+        })
+        
+        let action2 = UIAlertAction(title: "写真から選ぶ", style: UIAlertActionStyle.default, handler: {
+            (action: UIAlertAction!) in
+            print("アクション２をタップした時の処理")
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+                let picker = UIImagePickerController()
+                picker.delegate = self
+                picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+                
+                // カメラを自由な形に開きたい時（今回は正方形）
+                picker.allowsEditing = true
+                
+                // アプリ画面へ戻る
+                self.present(picker, animated: true, completion: nil)
+            }
+        })
+        
+        let action3 = UIAlertAction(title: "画像を削除", style: UIAlertActionStyle.destructive, handler: {
+            (action: UIAlertAction!) in
+            print("アクション３をタップした時の処理")
+            let alert = UIAlertController(title: "確認", message: "本当に削除しますか？", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let action1 = UIAlertAction(title: "削除", style: UIAlertActionStyle.destructive, handler: {
+                (action: UIAlertAction!) in
+                print("削除が押されました")
+                self.hirucameraImageView.image = nil
+                //self.asabatuButton.isHidden = true
+                self.hirutuikaLabel.isHidden = false
+            })
+            
+            
+            
+            let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
+                (action: UIAlertAction!) in
+                print("キャンセルをタップした時の処理")
+            })
+            
+            alert.addAction(action1)
+            alert.addAction(cancel)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        })
+        
+        
+        
+        let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
+            (action: UIAlertAction!) in
+            print("キャンセルをタップした時の処理")
+        })
+        
+        actionSheet.addAction(action1)
+        actionSheet.addAction(action2)
+        actionSheet.addAction(cancel)
+        if hirucameraImageView.image != nil {
+            actionSheet.addAction(action3)
+        }
+        
+        self.present(actionSheet, animated: true, completion: nil)
+        
+
+    }
+    
+    @IBAction func hirupress(sender: UILongPressGestureRecognizer){
+        
+        if hirucameraImageView.image != nil {
+            performSegue(withIdentifier: "toimage", sender: hirucameraImageView.image)
+        }
+
+    }
+    
+    @IBAction func yorutap() {
+        print("夜ごはんの画像がタップされました")
+        let actionSheet = UIAlertController(title: "メディアの選択", message: "どのアプリのメディアを使いますか？", preferredStyle: UIAlertControllerStyle.actionSheet)
+        sikibetunumber = 2
+        let action1 = UIAlertAction(title: "カメラで撮る", style: UIAlertActionStyle.default, handler: {
+            (action: UIAlertAction!) in
+            print("アクション１をタップした時の処理")
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+                // カメラを起動する
+                let picker = UIImagePickerController()
+                picker.sourceType = UIImagePickerControllerSourceType.camera
+                picker.delegate = self
+                
+                // カメラを自由な形に開きたい時（特に正方形）
+                picker.allowsEditing = true
+                
+                self.present(picker, animated: true, completion: nil)
+            } else {
+                // カメラが利用できないときはerrorがコンソールに表示される
+                print("error")
+            }
+        })
+        
+        let action2 = UIAlertAction(title: "写真から選ぶ", style: UIAlertActionStyle.default, handler: {
+            (action: UIAlertAction!) in
+            print("アクション２をタップした時の処理")
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+                let picker = UIImagePickerController()
+                picker.delegate = self
+                picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+                
+                // カメラを自由な形に開きたい時（今回は正方形）
+                picker.allowsEditing = true
+                
+                // アプリ画面へ戻る
+                self.present(picker, animated: true, completion: nil)
+            }
+        })
+        
+        let action3 = UIAlertAction(title: "画像を削除", style: UIAlertActionStyle.destructive, handler: {
+            (action: UIAlertAction!) in
+            print("アクション３をタップした時の処理")
+            let alert = UIAlertController(title: "確認", message: "本当に削除しますか？", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let action1 = UIAlertAction(title: "削除", style: UIAlertActionStyle.destructive, handler: {
+                (action: UIAlertAction!) in
+                print("削除が押されました")
+                self.yorucameraImageView.image = nil
+                //self.asabatuButton.isHidden = true
+                self.yorutuikaLabel.isHidden = false
+            })
+            
+            
+            
+            let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
+                (action: UIAlertAction!) in
+                print("キャンセルをタップした時の処理")
+            })
+            
+            alert.addAction(action1)
+            alert.addAction(cancel)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        })
+        
+        
+        
+        let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
+            (action: UIAlertAction!) in
+            print("キャンセルをタップした時の処理")
+        })
+        
+        actionSheet.addAction(action1)
+        actionSheet.addAction(action2)
+        actionSheet.addAction(cancel)
+        if yorucameraImageView.image != nil {
+            actionSheet.addAction(action3)
+        }
+        
+        self.present(actionSheet, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func yorupress(sender: UILongPressGestureRecognizer){
+        
+        if yorucameraImageView.image != nil {
+            performSegue(withIdentifier: "toimage", sender: yorucameraImageView.image)
+        }
+    
+        }
+
+
+    
+
     @IBAction func showAlert(_ sender: UIButton) {
         let actionSheet = UIAlertController(title: "メディアの選択", message: "どのアプリのメディアを使いますか？", preferredStyle: UIAlertControllerStyle.actionSheet)
         sikibetunumber = sender.tag
@@ -598,6 +642,21 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
         
         
         dismiss(animated: true, completion: nil)    // アプリ画面へ戻る
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "toimage") {
+            let subVC = (segue.destination as? bigryouriViewController)!
+            // SubViewController のselectedImgに選択された画像を設定する
+            subVC.bigryouri = sender as! UIImage
+            
+        }
+    }
+    
+    func TextFieldSearchButtonClicked(_ TextField: UITextField) {
+        asagohanTextField.endEditing(true)
+        hirugohanTextField.endEditing(true)
+        yorugohanTextField.endEditing(true)
     }
     
     

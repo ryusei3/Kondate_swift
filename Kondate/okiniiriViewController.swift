@@ -29,11 +29,6 @@ class okiniiriViewController: UIViewController, UITableViewDataSource,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9412038536, green: 0.7022952496, blue: 0.4388047765, alpha: 1)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        
-        
-        
         
         table.dataSource = self
         
@@ -43,16 +38,21 @@ class okiniiriViewController: UIViewController, UITableViewDataSource,UITableVie
         
         SearchBar.enablesReturnKeyAutomatically = false
        
+        table.tableHeaderView = SearchBar
         
+        self.table.setContentOffset(CGPoint(x: 0.0, y: self.SearchBar.frame.size.height), animated: true)
         
         
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
+       
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.03130810799, green: 0.7781472457, blue: 0.8365851684, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9667228596, green: 0.9346891378, blue: 1, alpha: 1)
         
         reloadData()
-        
     }
     
     
@@ -60,9 +60,6 @@ class okiniiriViewController: UIViewController, UITableViewDataSource,UITableVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-
 
     func didSelectTab(_ tabBarController: TabBarController) {
         guard let _ = table else {

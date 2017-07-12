@@ -29,11 +29,6 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.05620383162, green: 0.1511129789, blue: 0.7838204339, alpha: 1)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        
-        
-        
         table.dataSource = self
         
         table.delegate = self
@@ -42,16 +37,21 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
         
         testSearchBar.enablesReturnKeyAutomatically = false
         
-       
+       table.tableHeaderView = testSearchBar
+        
+        self.table.setContentOffset(CGPoint(x: 0.0, y: self.testSearchBar.frame.size.height), animated: true)
 
 
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-    
+        
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.03130810799, green: 0.7781472457, blue: 0.8365851684, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9667228596, green: 0.9346891378, blue: 1, alpha: 1)
+        
         reloadData()
-    
     }
     
 
@@ -59,6 +59,9 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
+            
+    
     
     
    
