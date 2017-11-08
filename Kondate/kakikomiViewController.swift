@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
-class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate ,UITextViewDelegate{
+class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate ,UITextFieldDelegate {
     
     @IBOutlet var asacameraImageView: UIImageView!
     @IBOutlet var hirucameraImageView: UIImageView!
@@ -18,6 +19,16 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
     @IBOutlet var asatuikaLabel: UILabel!
     @IBOutlet var hirutuikaLabel: UILabel!
     @IBOutlet var yorutuikaLabel: UILabel!
+    
+    @IBOutlet weak var myNavigationItem: UINavigationItem!
+    
+    var editnumber: Int = 0
+    var edittext: String = ""
+    var sendimage:  UIImage!
+    var sendtext:  String!
+    
+    
+    
     
     //@IBOutlet var asabatuButton: UIButton!
     //@IBOutlet var hirubatuButton: UIButton!
@@ -37,13 +48,33 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
     
     
     var date: Date!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1046803971, green: 0.7349821891, blue: 0.04140474083, alpha: 1)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9667228596, green: 0.9346891378, blue: 1, alpha: 1)
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) {
+            (granted, error) in
+            // エラー処理
+        }
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = NSString.localizedUserNotificationString(forKey: "熱盛ィィィィィ", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "失礼しました。熱盛と出てしまいました。", arguments: nil)
+        content.sound = UNNotificationSound.default()
+        // アプリを起動して２秒後に通知を送る
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "my-notification", content: content, trigger: trigger)
+        
+        // 通知を登録
+        center.add(request) { (error : Error?) in
+            if error != nil {
+                // エラー処理
+            }
+        }
         
         
         asacameraImageView.tag = 100
@@ -55,6 +86,12 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
         yorucameraImageView.tag = 102
         yorucameraImageView.isUserInteractionEnabled  = true
         
+        asagohanTextField.delegate = self
+        hirugohanTextField.delegate = self
+        yorugohanTextField.delegate = self
+        
+        self.navigationController!.interactivePopGestureRecognizer!.isEnabled = false
+        
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let viewContext = appDelegate.persistentContainer.viewContext
         let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
@@ -62,6 +99,8 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
         
         let calendar = Calendar(identifier: .gregorian)
         let target = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
+        var time = target.addingTimeInterval(24*60*60)
+        var time2 = target.addingTimeInterval(-24*60*60)
         
         // dateで指定した日の0時0分0秒から23時59分59秒の間にあるかどうかという検索条件
         query.predicate = NSPredicate(format: "SELF.date BETWEEN {%@, %@}",
@@ -98,6 +137,8 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
             yorutuikaLabel.isHidden = true
         }
         
+        myNavigationItem.title = changeHeaderTitle(date)
+        
 //        let widthMax = view.frame.size.width
         
         
@@ -113,10 +154,45 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        
+        
+        
+        // キーボードを閉じる
+        asagohanTextField.resignFirstResponder()
+        hirugohanTextField.resignFirstResponder()
+        yorugohanTextField.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        edittext = textField.text!
+        editnumber = 1
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if edittext != textField.text {
+            
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1046803971, green: 0.7349821891, blue: 0.04140474083, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9667228596, green: 0.9346891378, blue: 1, alpha: 1)
+
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.03130810799, green: 0.7781472457, blue: 0.8365851684, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9667228596, green: 0.9346891378, blue: 1, alpha: 1)
+        
+        
     }
     
     
@@ -127,6 +203,8 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
     }
     
     @IBAction func saveMemo() {
+        
+        
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let viewContext = appDelegate.persistentContainer.viewContext
         let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
@@ -203,6 +281,60 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
          saveData.synchronize()*/
         
         self.navigationController?.popViewController(animated: true)
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) {
+            (granted, error) in
+            // エラー処理
+        }
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = NSString.localizedUserNotificationString(forKey: "献立が追加されました。", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "今すぐ確認しましょう！", arguments: nil)
+        content.sound = UNNotificationSound.default()
+        // アプリを起動して2秒後に通知を送る
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "my-notification1", content: content, trigger: trigger)
+        
+        // 通知を登録
+        center.add(request) { (error : Error?) in
+            if error != nil {
+                // エラー処理
+            }
+        }
+        
+    }
+    
+    @IBAction func modoruButton() {
+        
+        if editnumber == 1 {
+            
+            let alert = UIAlertController(title: "変更内容を破棄してもよろしいですか？", message: "まだ保存されていません", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let action1 = UIAlertAction(title: "はい", style: UIAlertActionStyle.destructive, handler: {
+                (action: UIAlertAction!) in
+                print("はいが押されました")
+                
+                self.navigationController?.popViewController(animated: true)
+                
+            })
+            
+            
+            
+            let cancel = UIAlertAction(title: "いいえ", style: UIAlertActionStyle.cancel, handler: {
+                (action: UIAlertAction!) in
+                print("いいえをタップした時の処理")
+            })
+            
+            alert.addAction(action1)
+            alert.addAction(cancel)
+            
+            self.present(alert, animated: true, completion: nil)
+        }else {
+            self.navigationController?.popViewController(animated: true)
+        }
         
     }
     
@@ -299,7 +431,9 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
     @IBAction func asapress(sender: UILongPressGestureRecognizer) {
     
         if asacameraImageView.image != nil {
-            performSegue(withIdentifier: "toimage", sender: asacameraImageView.image)
+            sendimage = asacameraImageView.image
+            sendtext = asagohanTextField.text
+            performSegue(withIdentifier: "toimage", sender: nil)
         }
      
         
@@ -394,7 +528,9 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
     @IBAction func hirupress(sender: UILongPressGestureRecognizer){
         
         if hirucameraImageView.image != nil {
-            performSegue(withIdentifier: "toimage", sender: hirucameraImageView.image)
+            sendimage = hirucameraImageView.image
+            sendtext = hirugohanTextField.text
+            performSegue(withIdentifier: "toimage", sender: nil)
         }
 
     }
@@ -487,64 +623,124 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
     @IBAction func yorupress(sender: UILongPressGestureRecognizer){
         
         if yorucameraImageView.image != nil {
-            performSegue(withIdentifier: "toimage", sender: yorucameraImageView.image)
+            sendimage = yorucameraImageView.image
+            sendtext = yorugohanTextField.text
+            performSegue(withIdentifier: "toimage", sender: nil)
         }
     
         }
-
-
+    @IBAction func swiperight(sender: UISwipeGestureRecognizer) {
+        let calendar = Calendar(identifier: .gregorian)
+        let target = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
+        var time2 = target.addingTimeInterval(-24*60*60)
+        date = time2
+        
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let viewContext = appDelegate.persistentContainer.viewContext
+        let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
+        
+        query.predicate = NSPredicate(format: "SELF.date BETWEEN {%@, %@}",
+                                      argumentArray: [target, Date(timeInterval: 24*60*60-1, since: target)])
+        print("スワイプ開始 \(date)")
+        let fetchData = try! viewContext.fetch(query)
+        
+        
+        if let data = fetchData.first {
+            asagohanTextField.text = data.asagohan
+            hirugohanTextField.text = data.hirugohan
+            yorugohanTextField.text = data.yorugohan
+            asacameraImageView.image = UIImage(data: data.asagohanimage as? Data ?? Data())
+            hirucameraImageView.image = UIImage(data: data.hirugohanimage as? Data ?? Data())
+            yorucameraImageView.image = UIImage(data: data.yorugohanimage as? Data ?? Data())
+            
+        }else{
+            asagohanTextField.text = nil
+            hirugohanTextField.text = nil
+            yorugohanTextField.text = nil
+            asacameraImageView.image = nil
+            hirucameraImageView.image = nil
+            yorucameraImageView.image = nil
+            
+        }
+        
+        if asacameraImageView.image != nil {
+            asatuikaLabel.isHidden = true
+        }
+        if hirucameraImageView.image != nil {
+            hirutuikaLabel.isHidden = true
+        }
+        if yorucameraImageView.image != nil {
+            yorutuikaLabel.isHidden = true
+        }
+        
+        myNavigationItem.title = changeHeaderTitle(date)
+        print("スワイプ終了")
+        
+            
+        }
     
-
-    @IBAction func showAlert(_ sender: UIButton) {
-        let actionSheet = UIAlertController(title: "メディアの選択", message: "どのアプリのメディアを使いますか？", preferredStyle: UIAlertControllerStyle.actionSheet)
-        sikibetunumber = sender.tag
-        let action1 = UIAlertAction(title: "カメラで撮る", style: UIAlertActionStyle.default, handler: {
-            (action: UIAlertAction!) in
-            print("アクション１をタップした時の処理")
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-                // カメラを起動する
-                let picker = UIImagePickerController()
-                picker.sourceType = UIImagePickerControllerSourceType.camera
-                picker.delegate = self
-                
-                // カメラを自由な形に開きたい時（特に正方形）
-                picker.allowsEditing = true
-                
-                self.present(picker, animated: true, completion: nil)
-            } else {
-                // カメラが利用できないときはerrorがコンソールに表示される
-                print("error")
-            }
-        })
+    @IBAction func swipeleft(sender: UISwipeGestureRecognizer) {
         
-        let action2 = UIAlertAction(title: "写真から選ぶ", style: UIAlertActionStyle.default, handler: {
-            (action: UIAlertAction!) in
-            print("アクション２をタップした時の処理")
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-                let picker = UIImagePickerController()
-                picker.delegate = self
-                picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-                
-                // カメラを自由な形に開きたい時（今回は正方形）
-                picker.allowsEditing = true
-                
-                // アプリ画面へ戻る
-                self.present(picker, animated: true, completion: nil)
-            }
-        })
+        let calendar = Calendar(identifier: .gregorian)
+        let target = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
+        var time = target.addingTimeInterval(24*60*60)
+        date = time
+        
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let viewContext = appDelegate.persistentContainer.viewContext
+        let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
+        
+        query.predicate = NSPredicate(format: "SELF.date BETWEEN {%@, %@}",
+                                      argumentArray: [target, Date(timeInterval: 24*60*60-1, since: target)])
+        print("スワイプ開始 \(date)")
+        let fetchData = try! viewContext.fetch(query)
         
         
-        let cancel = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel, handler: {
-            (action: UIAlertAction!) in
-            print("キャンセルをタップした時の処理")
-        })
+        if let data = fetchData.first {
+            asagohanTextField.text = data.asagohan
+            hirugohanTextField.text = data.hirugohan
+            yorugohanTextField.text = data.yorugohan
+            asacameraImageView.image = UIImage(data: data.asagohanimage as? Data ?? Data())
+            hirucameraImageView.image = UIImage(data: data.hirugohanimage as? Data ?? Data())
+            yorucameraImageView.image = UIImage(data: data.yorugohanimage as? Data ?? Data())
+            
+        }else{
+            asagohanTextField.text = nil
+            hirugohanTextField.text = nil
+            yorugohanTextField.text = nil
+            asacameraImageView.image = nil
+            hirucameraImageView.image = nil
+            yorucameraImageView.image = nil
+            
+        }
         
-        actionSheet.addAction(action1)
-        actionSheet.addAction(action2)
-        actionSheet.addAction(cancel)
+        if asacameraImageView.image != nil {
+            asatuikaLabel.isHidden = true
+        }
+        if hirucameraImageView.image != nil {
+            hirutuikaLabel.isHidden = true
+        }
+        if yorucameraImageView.image != nil {
+            yorutuikaLabel.isHidden = true
+        }
         
-        self.present(actionSheet, animated: true, completion: nil)
+        myNavigationItem.title = changeHeaderTitle(date)
+        print("スワイプ終了")
+        
+        
     }
+    
+    func changeHeaderTitle(_ date: Date) -> String {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateFormat = "M月d日"
+        let selectMonth = formatter.string(from: date as Date)
+        return selectMonth
+    }
+
+
+    
+
+     
     
     /*@IBAction func asabatu() {
      // asacameraImageViewのimageをnilにする
@@ -648,7 +844,8 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
         if (segue.identifier == "toimage") {
             let subVC = (segue.destination as? bigryouriViewController)!
             // SubViewController のselectedImgに選択された画像を設定する
-            subVC.bigryouri = sender as! UIImage
+            subVC.bigryouri = sendimage
+            subVC.bignamae = sendtext
             
         }
     }

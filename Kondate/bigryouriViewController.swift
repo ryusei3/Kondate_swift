@@ -11,11 +11,14 @@ import UIKit
 class bigryouriViewController: UIViewController {
     
     @IBOutlet var bigryouriview: UIImageView!
+    @IBOutlet var bignamaelabel:  UILabel!
     var bigryouri: UIImage!
+    var bignamae: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         bigryouriview.image = bigryouri
+        bignamaelabel.text = bignamae
         
         bigryouriview.isUserInteractionEnabled = true
 

@@ -128,6 +128,21 @@ class karenderViewController: UIViewController, UICollectionViewDataSource, UICo
         //navigationController?.title = changeHeaderTitle(selectedDate)
     }
     
+    @IBAction func swiperight(sender: UISwipeGestureRecognizer) {
+        selectedDate = dateManager.prevMonth(selectedDate)
+        calenderCollectionView.reloadData()
+        myNavigationItem.title = changeHeaderTitle(selectedDate)
+        
+        }
+    @IBAction func swipeleft(sender: UISwipeGestureRecognizer) {
+        selectedDate = dateManager.nextMonth(selectedDate)
+        calenderCollectionView.reloadData()
+        myNavigationItem.title = changeHeaderTitle(selectedDate)
+        
+        
+    }
+    
+    
     
         
     
