@@ -195,7 +195,7 @@ class okiniiriViewController: UIViewController, UITableViewDataSource,UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "tokakikomiview2") {
-            let subVC = (segue.destination as? kakikomiViewController)!
+            let subVC = (segue.destination as? PageViewController)!
             // SubViewController のselectedImgに選択された画像を設定する
             subVC.date = sender as! Date        }
     }

@@ -154,7 +154,7 @@ class karenderViewController: UIViewController, UICollectionViewDataSource, UICo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         switch (segue.destination ,segue.identifier) {
-        case (let controller as kakikomiViewController, "settei"?):
+        case (let controller as PageViewController, "settei"?):
             controller.date = (sender as? Date) ?? Date()
         default:
             break

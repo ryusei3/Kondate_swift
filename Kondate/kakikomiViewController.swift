@@ -90,7 +90,7 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
         hirugohanTextField.delegate = self
         yorugohanTextField.delegate = self
         
-        self.navigationController!.interactivePopGestureRecognizer!.isEnabled = false
+        //self.navigationController!.interactivePopGestureRecognizer!.isEnabled = false
         
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let viewContext = appDelegate.persistentContainer.viewContext
@@ -187,13 +187,7 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
 
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.03130810799, green: 0.7781472457, blue: 0.8365851684, alpha: 1)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9667228596, green: 0.9346891378, blue: 1, alpha: 1)
-        
-        
-    }
+    
     
     
     
@@ -280,7 +274,7 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
          saveData.set(yorugohanTextField.text, forKey: "yorugohantitle")
          saveData.synchronize()*/
         
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
         
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) {
@@ -630,102 +624,71 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
     
         }
     @IBAction func swiperight(sender: UISwipeGestureRecognizer) {
-        let calendar = Calendar(identifier: .gregorian)
-        let target = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
-        var time2 = target.addingTimeInterval(-24*60*60)
-        date = time2
         
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let viewContext = appDelegate.persistentContainer.viewContext
-        let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
-        
-        query.predicate = NSPredicate(format: "SELF.date BETWEEN {%@, %@}",
-                                      argumentArray: [target, Date(timeInterval: 24*60*60-1, since: target)])
-        print("スワイプ開始 \(date)")
-        let fetchData = try! viewContext.fetch(query)
-        
-        
-        if let data = fetchData.first {
-            asagohanTextField.text = data.asagohan
-            hirugohanTextField.text = data.hirugohan
-            yorugohanTextField.text = data.yorugohan
-            asacameraImageView.image = UIImage(data: data.asagohanimage as? Data ?? Data())
-            hirucameraImageView.image = UIImage(data: data.hirugohanimage as? Data ?? Data())
-            yorucameraImageView.image = UIImage(data: data.yorugohanimage as? Data ?? Data())
+        if editnumber == 1 {
             
-        }else{
-            asagohanTextField.text = nil
-            hirugohanTextField.text = nil
-            yorugohanTextField.text = nil
-            asacameraImageView.image = nil
-            hirucameraImageView.image = nil
-            yorucameraImageView.image = nil
+            let alert = UIAlertController(title: "変更内容を破棄してもよろしいですか？", message: "まだ保存されていません", preferredStyle: UIAlertControllerStyle.alert)
             
-        }
-        
-        if asacameraImageView.image != nil {
-            asatuikaLabel.isHidden = true
-        }
-        if hirucameraImageView.image != nil {
-            hirutuikaLabel.isHidden = true
-        }
-        if yorucameraImageView.image != nil {
-            yorutuikaLabel.isHidden = true
-        }
-        
-        myNavigationItem.title = changeHeaderTitle(date)
-        print("スワイプ終了")
-        
+            let action1 = UIAlertAction(title: "はい", style: UIAlertActionStyle.destructive, handler: {
+                (action: UIAlertAction!) in
+                print("はいが押されました")
+                
+                //self.swiperightaction()
+                self.editnumber = 0
+                
+            })
             
+            
+            
+            
+            let cancel = UIAlertAction(title: "いいえ", style: UIAlertActionStyle.cancel, handler: {
+                (action: UIAlertAction!) in
+                print("いいえをタップした時の処理")
+            })
+            
+            alert.addAction(action1)
+            alert.addAction(cancel)
+            
+            self.present(alert, animated: true, completion: nil)
+        }else {
+            //self.swiperightaction()
+        }
+        
+        
+        
         }
     
     @IBAction func swipeleft(sender: UISwipeGestureRecognizer) {
         
-        let calendar = Calendar(identifier: .gregorian)
-        let target = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
-        var time = target.addingTimeInterval(24*60*60)
-        date = time
-        
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let viewContext = appDelegate.persistentContainer.viewContext
-        let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
-        
-        query.predicate = NSPredicate(format: "SELF.date BETWEEN {%@, %@}",
-                                      argumentArray: [target, Date(timeInterval: 24*60*60-1, since: target)])
-        print("スワイプ開始 \(date)")
-        let fetchData = try! viewContext.fetch(query)
-        
-        
-        if let data = fetchData.first {
-            asagohanTextField.text = data.asagohan
-            hirugohanTextField.text = data.hirugohan
-            yorugohanTextField.text = data.yorugohan
-            asacameraImageView.image = UIImage(data: data.asagohanimage as? Data ?? Data())
-            hirucameraImageView.image = UIImage(data: data.hirugohanimage as? Data ?? Data())
-            yorucameraImageView.image = UIImage(data: data.yorugohanimage as? Data ?? Data())
+        if editnumber == 1 {
             
-        }else{
-            asagohanTextField.text = nil
-            hirugohanTextField.text = nil
-            yorugohanTextField.text = nil
-            asacameraImageView.image = nil
-            hirucameraImageView.image = nil
-            yorucameraImageView.image = nil
+            let alert = UIAlertController(title: "変更内容を破棄してもよろしいですか？", message: "まだ保存されていません", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let action1 = UIAlertAction(title: "はい", style: UIAlertActionStyle.destructive, handler: {
+                (action: UIAlertAction!) in
+                print("はいが押されました")
+                
+                //self.swipeleftaction()
+                
+            })
+            
+            
+            
+            let cancel = UIAlertAction(title: "いいえ", style: UIAlertActionStyle.cancel, handler: {
+                (action: UIAlertAction!) in
+                print("いいえをタップした時の処理")
+                self.editnumber = 0
+            })
+            
+            alert.addAction(action1)
+            alert.addAction(cancel)
+            
+            self.present(alert, animated: true, completion: nil)
+        }else {
+            //self.swipeleftaction()
             
         }
         
-        if asacameraImageView.image != nil {
-            asatuikaLabel.isHidden = true
-        }
-        if hirucameraImageView.image != nil {
-            hirutuikaLabel.isHidden = true
-        }
-        if yorucameraImageView.image != nil {
-            yorutuikaLabel.isHidden = true
-        }
-        
-        myNavigationItem.title = changeHeaderTitle(date)
-        print("スワイプ終了")
         
         
     }
@@ -736,6 +699,122 @@ class kakikomiViewController: UIViewController ,UIImagePickerControllerDelegate,
         let selectMonth = formatter.string(from: date as Date)
         return selectMonth
     }
+    /*func swiperightaction() {
+        let calendar = Calendar(identifier: .gregorian)
+        let target = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
+        var time2 = target.addingTimeInterval(-24*60*60)
+        date = time2
+        
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let viewContext = appDelegate.persistentContainer.viewContext
+        let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
+        
+        query.predicate = NSPredicate(format: "SELF.date BETWEEN {%@, %@}",
+                                      argumentArray: [date, Date(timeInterval: 24*60*60-1, since: date)])
+        print("スワイプ開始 \(date)")
+        let fetchData = try! viewContext.fetch(query)
+        
+        
+        if let data = fetchData.first {
+            asagohanTextField.text = data.asagohan
+            hirugohanTextField.text = data.hirugohan
+            yorugohanTextField.text = data.yorugohan
+            asacameraImageView.image = UIImage(data: data.asagohanimage as? Data ?? Data())
+            hirucameraImageView.image = UIImage(data: data.hirugohanimage as? Data ?? Data())
+            yorucameraImageView.image = UIImage(data: data.yorugohanimage as? Data ?? Data())
+            
+        }else{
+            asagohanTextField.text = nil
+            hirugohanTextField.text = nil
+            yorugohanTextField.text = nil
+            asacameraImageView.image = nil
+            hirucameraImageView.image = nil
+            yorucameraImageView.image = nil
+            
+        }
+        
+        if asacameraImageView.image != nil {
+            asatuikaLabel.isHidden = true
+        }
+        if hirucameraImageView.image != nil {
+            hirutuikaLabel.isHidden = true
+        }
+        if yorucameraImageView.image != nil {
+            yorutuikaLabel.isHidden = true
+        }
+        
+        if asacameraImageView.image == nil {
+            asatuikaLabel.isHidden = false
+        }
+        if hirucameraImageView.image == nil {
+            hirutuikaLabel.isHidden = false
+        }
+        if yorucameraImageView.image == nil {
+            yorutuikaLabel.isHidden = false
+        }
+        
+        myNavigationItem.title = changeHeaderTitle(date)
+        print("スワイプ終了")
+    }*/
+    
+    /*func swipeleftaction() {
+        let calendar = Calendar(identifier: .gregorian)
+        let target = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
+        var time = target.addingTimeInterval(24*60*60)
+        date = time
+        
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let viewContext = appDelegate.persistentContainer.viewContext
+        let query: NSFetchRequest<Kondate> = Kondate.fetchRequest()
+        
+        query.predicate = NSPredicate(format: "SELF.date BETWEEN {%@, %@}",
+                                      argumentArray: [date, Date(timeInterval: 24*60*60-1, since: date)])
+        print("スワイプ開始 \(date)")
+        let fetchData = try! viewContext.fetch(query)
+        
+        
+        if let data = fetchData.first {
+            asagohanTextField.text = data.asagohan
+            hirugohanTextField.text = data.hirugohan
+            yorugohanTextField.text = data.yorugohan
+            asacameraImageView.image = UIImage(data: data.asagohanimage as? Data ?? Data())
+            hirucameraImageView.image = UIImage(data: data.hirugohanimage as? Data ?? Data())
+            yorucameraImageView.image = UIImage(data: data.yorugohanimage as? Data ?? Data())
+            
+        }else{
+            asagohanTextField.text = nil
+            hirugohanTextField.text = nil
+            yorugohanTextField.text = nil
+            asacameraImageView.image = nil
+            hirucameraImageView.image = nil
+            yorucameraImageView.image = nil
+            
+        }
+        
+        if asacameraImageView.image != nil {
+            asatuikaLabel.isHidden = true
+        }
+        if hirucameraImageView.image != nil {
+            hirutuikaLabel.isHidden = true
+        }
+        if yorucameraImageView.image != nil {
+            yorutuikaLabel.isHidden = true
+        }
+        
+        if asacameraImageView.image == nil {
+            asatuikaLabel.isHidden = false
+        }
+        if hirucameraImageView.image == nil {
+            hirutuikaLabel.isHidden = false
+        }
+        if yorucameraImageView.image == nil {
+            yorutuikaLabel.isHidden = false
+        }
+        
+        myNavigationItem.title = changeHeaderTitle(date)
+        print("スワイプ終了")
+        
+    }*/
 
 
     

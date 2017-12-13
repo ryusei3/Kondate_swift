@@ -181,10 +181,11 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "tokakikomiview") {
-            let subVC = (segue.destination as? kakikomiViewController)!
+            let subVC = (segue.destination as? PageViewController)!
             // SubViewController のselectedImgに選択された画像を設定する
             subVC.date = sender as! Date        }
     }
+    
     
     func reloadData() {
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -198,7 +199,7 @@ class kensakuViewController: UIViewController, UITableViewDataSource, UITableVie
         likenumberArray = []
         ryouriArray = []
         
-        for data in fetchData {
+        for data in fetchData.reversed() {
             ryourinameArray.append(data.asagohan)
             
             ryourinameArray.append(data.hirugohan)

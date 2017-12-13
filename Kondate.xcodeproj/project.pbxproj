@@ -26,6 +26,9 @@
 		5C232A2B1F03C6D000EC5FFD /* 28125_konosuba_iPhone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C232A2A1F03C6D000EC5FFD /* 28125_konosuba_iPhone.jpg */; };
 		5C232A2F1F03C8DC00EC5FFD /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C232A2E1F03C8DC00EC5FFD /* images.jpg */; };
 		5C6949841F0CE764004D0274 /* bigryouriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6949831F0CE764004D0274 /* bigryouriViewController.swift */; };
+		5C6C59E91FE13361006B4375 /* setteiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C59E81FE13361006B4375 /* setteiViewController.swift */; };
+		5C6C59EB1FE13461006B4375 /* icon_000010_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6C59EA1FE13461006B4375 /* icon_000010_256.png */; };
+		5C9280DC1FC57CFD00108E6E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9280DB1FC57CFD00108E6E /* PageViewController.swift */; };
 		5C989F021E2642DC00156A84 /* kondatemodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C989F001E2642DC00156A84 /* kondatemodel.xcdatamodeld */; };
 		5CA313FF1EFA87EA001C7A74 /* icon_139140_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CA313FE1EFA87EA001C7A74 /* icon_139140_256.png */; };
 		5CA314011EFA8842001C7A74 /* icon_157110_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CA314001EFA8842001C7A74 /* icon_157110_256.png */; };
@@ -79,6 +82,9 @@
 		5C232A2A1F03C6D000EC5FFD /* 28125_konosuba_iPhone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 28125_konosuba_iPhone.jpg; sourceTree = "<group>"; };
 		5C232A2E1F03C8DC00EC5FFD /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
 		5C6949831F0CE764004D0274 /* bigryouriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bigryouriViewController.swift; sourceTree = "<group>"; };
+		5C6C59E81FE13361006B4375 /* setteiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setteiViewController.swift; sourceTree = "<group>"; };
+		5C6C59EA1FE13461006B4375 /* icon_000010_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_000010_256.png; sourceTree = "<group>"; };
+		5C9280DB1FC57CFD00108E6E /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		5C989F011E2642DC00156A84 /* kondatemodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kondatemodel.xcdatamodel; sourceTree = "<group>"; };
 		5CA313FE1EFA87EA001C7A74 /* icon_139140_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_139140_256.png; sourceTree = "<group>"; };
 		5CA314001EFA8842001C7A74 /* icon_157110_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_157110_256.png; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 		1BF0B1CE1D9A8DDE0049641E /* Kondate */ = {
 			isa = PBXGroup;
 			children = (
+				5C6C59EA1FE13461006B4375 /* icon_000010_256.png */,
 				5C232A2E1F03C8DC00EC5FFD /* images.jpg */,
 				5C232A2A1F03C6D000EC5FFD /* 28125_konosuba_iPhone.jpg */,
 				5CA314041EFA88D9001C7A74 /* サンプルのコピー3.png */,
@@ -160,6 +167,7 @@
 				1B6F72C21DA50E7900E3F99B /* kensakuTableViewCell.swift */,
 				460CC81D1DCA007E00EBF626 /* karenderViewController.swift */,
 				460CC81F1DCA00F000EBF626 /* karenderCollectionViewCell.swift */,
+				5C9280DB1FC57CFD00108E6E /* PageViewController.swift */,
 				469BD2ED1DF81FAA0045654B /* kakikomiViewController.swift */,
 				5CB916241E2F7D5E00B9CA52 /* DateManager.swift */,
 				1B6F72C41DA5174C00E3F99B /* okiniiriViewController.swift */,
@@ -167,6 +175,7 @@
 				5C989F001E2642DC00156A84 /* kondatemodel.xcdatamodeld */,
 				5CE484E51E66E610000959AA /* TabBarDelegate.swift */,
 				5C6949831F0CE764004D0274 /* bigryouriViewController.swift */,
+				5C6C59E81FE13361006B4375 /* setteiViewController.swift */,
 			);
 			path = Kondate;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 				5CA314051EFA88D9001C7A74 /* サンプルのコピー3.png in Resources */,
 				1BF0B1D51D9A8DDE0049641E /* Main.storyboard in Resources */,
 				5CAF4A431EDEC76F0010AF2D /* サンプル.png in Resources */,
+				5C6C59EB1FE13461006B4375 /* icon_000010_256.png in Resources */,
 				5C232A2F1F03C8DC00EC5FFD /* images.jpg in Resources */,
 				5CA314011EFA8842001C7A74 /* icon_157110_256.png in Resources */,
 				5CAF4A451EDEC8670010AF2D /* サンプルのコピー.png in Resources */,
@@ -322,11 +332,13 @@
 			files = (
 				5CB916231E2F7B7400B9CA52 /* Kondate+CoreDataProperties.swift in Sources */,
 				5C6949841F0CE764004D0274 /* bigryouriViewController.swift in Sources */,
+				5C6C59E91FE13361006B4375 /* setteiViewController.swift in Sources */,
 				5CB916251E2F7D5E00B9CA52 /* DateManager.swift in Sources */,
 				460CC81E1DCA007E00EBF626 /* karenderViewController.swift in Sources */,
 				5CB916221E2F7B7400B9CA52 /* Kondate+CoreDataClass.swift in Sources */,
 				5CE484E61E66E610000959AA /* TabBarDelegate.swift in Sources */,
 				469BD2EE1DF81FAA0045654B /* kakikomiViewController.swift in Sources */,
+				5C9280DC1FC57CFD00108E6E /* PageViewController.swift in Sources */,
 				1B6F72C51DA5174C00E3F99B /* okiniiriViewController.swift in Sources */,
 				460CC8201DCA00F000EBF626 /* karenderCollectionViewCell.swift in Sources */,
 				1B6F72C71DA5177200E3F99B /* okiniiriTableViewCell.swift in Sources */,
